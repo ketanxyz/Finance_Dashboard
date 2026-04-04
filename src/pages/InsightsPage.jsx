@@ -1,4 +1,5 @@
 import InsightsPanel from "../components/insights/InsightsPanel";
+import "./InsightsPage.css";
 
 export default function InsightsPage() {
   return (

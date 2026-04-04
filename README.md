@@ -1,16 +1,125 @@
-# React + Vite
+# Finsight — Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern finance dashboard built using React to understand how real-world financial data can be structured, visualized, and managed on the frontend.
 
-Currently, two official plugins are available:
+The main focus of this project was to build a clean UI, handle state properly, and create interactive data visualizations without relying on heavy libraries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 18  
+- React Router DOM (v6)  
+- Context API + useReducer  
+- Vite  
+- Remix Icons  
+- Custom CSS (no UI frameworks)  
+- LocalStorage (for persistence)  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+Clone the project and run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+App will run on:
+```
+http://localhost:5173
+```
+
+For production build:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## Features
+
+### Dashboard
+
+- Summary cards (Balance, Income, Expenses)
+- Monthly cash flow chart (custom SVG)
+- Category-wise spending donut chart
+- Recent transactions preview
+
+---
+
+### Transactions
+
+- Search by description or category
+- Filter by type, category, and month
+- Sorting (date, amount, etc.)
+- Pagination
+- Add / Edit / Delete transactions
+- Export filtered data as CSV
+
+---
+
+### Insights
+
+- Key metrics like savings rate and top category
+- Monthly comparison (income vs expense)
+- Category breakdown with visual indicators
+
+---
+
+### UI / UX
+
+- Dark mode (stored in localStorage)
+- Fully responsive layout
+- Smooth animations (modals, transitions)
+- Proper empty states handling
+
+---
+
+## State Management
+
+Used Context API with useReducer to manage:
+
+- Transactions  
+- Filters  
+- Search  
+- Sorting  
+- Dark mode  
+
+This keeps state predictable and avoids unnecessary complexity.
+
+---
+
+## Project Structure
+
+```
+src/
+ ├── components/     # Reusable UI components
+ ├── pages/          # Route-based pages
+ ├── context/        # Global state management
+ ├── utils/          # Helper functions
+ ├── data/           # Mock transaction data
+```
+
+---
+
+## What I Learned
+
+- Structuring scalable React applications  
+- Managing global state without external libraries  
+- Building custom charts using SVG  
+- Designing clean and responsive UI  
+
+---
+
+## Notes
+
+- This is a frontend-only project  
+- Data is mocked but structured realistically  
+- No external chart libraries were used  
+
+---

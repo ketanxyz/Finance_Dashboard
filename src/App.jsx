@@ -5,6 +5,7 @@ import Layout from "./components/common/Layout";
 import DashboardPage from "./pages/DashboardPage";
 import TransactionsPage from "./pages/TransactionsPage";
 import InsightsPage from "./pages/InsightsPage";
+import './App.css';
 
 function AppShell() {
   const { state } = useApp();
@@ -33,4 +34,3 @@ export default function App() {
     </AppProvider>
   );
 }
-
