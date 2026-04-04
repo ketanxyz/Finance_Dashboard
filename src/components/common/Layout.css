@@ -1,0 +1,6 @@
+/* Layout.css */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .main-content { margin-left: 0; }
+}

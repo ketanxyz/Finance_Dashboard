@@ -26,4 +26,11 @@ function AppShell() {
   );
 }
 
+export default function App() {
+  return (
+    <AppProvider>
+      <AppShell />
+    </AppProvider>
+  );
+}
 
