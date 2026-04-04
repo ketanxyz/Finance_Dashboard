@@ -1,0 +1,74 @@
+/* SpendingDonut.css */
+
+.donut-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.donut-legend-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.donut-legend-row {
+  display: flex; align-items: center; gap: 8px;
+  font-size: .8rem; cursor: pointer;
+  border-radius: var(--radius-xs);
+  padding: 3px 5px;
+  transition: background var(--dur);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.donut-legend-row:hover { background: var(--bg-hover); }
+
+.donut-legend-row .dot {
+  width: 9px; height: 9px;
+  border-radius: 50%; flex-shrink: 0;
+}
+
+.donut-legend-row .name { flex: 1; color: var(--text-2); }
+
+.donut-legend-row .pct {
+  font-family: var(--font-mono);
+  font-size: .75rem; font-weight: 500;
+  color: var(--text-1);
+}
+
+/* ── Responsive ── */
+
+/* When stacked (tablet+), allow horizontal layout with donut on left */
+@media (max-width: 960px) {
+  .donut-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .donut-inner svg {
+    flex-shrink: 0;
+  }
+
+  .donut-legend-list {
+    flex: 1;
+    justify-content: center;
+    align-self: center;
+  }
+}
+
+/* Mobile — back to column */
+@media (max-width: 540px) {
+  .donut-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .donut-legend-row { font-size: .76rem; }
+}
+
+/* Tiny */
+@media (max-width: 360px) {
+  .donut-legend-row { font-size: .72rem; gap: 6px; }
+}
