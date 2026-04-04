@@ -1,0 +1,173 @@
+/* Topbar.css */
+
+.topbar {
+  height: var(--topbar-h);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background var(--dur);
+  gap: 12px;
+}
+
+.topbar-left {
+  display: flex; align-items: center;
+  gap: 12px; min-width: 0;
+}
+
+.topbar-title {
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--text-1); letter-spacing: -.02em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.hamburger {
+  display: none;
+  align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: var(--radius-xs);
+  color: var(--text-2);
+  font-size: 1.3rem;
+  transition: background var(--dur);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger:hover { background: var(--bg-hover); }
+
+.topbar-right {
+  display: flex; align-items: center;
+  gap: 10px; flex-shrink: 0;
+}
+
+.topbar-date {
+  font-size: .78rem;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.topbar-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: .8rem; font-weight: 700;
+  cursor: pointer;
+  transition: transform var(--dur), box-shadow var(--dur);
+  border: none; flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar-avatar:hover {
+  transform: scale(1.07);
+  box-shadow: 0 4px 14px rgba(91,106,240,.4);
+}
+
+/* ── Role Popover ── */
+.avatar-wrap { position: relative; }
+
+.role-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 240px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 300;
+  overflow: hidden;
+  animation: scaleIn .15s var(--ease);
+}
+
+.role-popover-header {
+  display: flex; align-items: center; gap: 7px;
+  padding: 12px 14px 10px;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+}
+
+.role-popover-header i { font-size: .9rem; }
+
+.role-option {
+  width: 100%;
+  display: flex; align-items: center; gap: 11px;
+  padding: 11px 14px;
+  background: transparent; border: none;
+  cursor: pointer;
+  transition: background var(--dur);
+  text-align: left;
+  font-family: var(--font);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.role-option:hover    { background: var(--bg-hover); }
+.role-option.selected { background: var(--brand-soft); }
+
+.role-option-icon {
+  width: 34px; height: 34px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+
+.role-option-text {
+  flex: 1;
+  display: flex; flex-direction: column; gap: 1px;
+}
+
+.role-option-name { font-size: .86rem; font-weight: 700; color: var(--text-1); }
+.role-option-desc { font-size: .72rem; color: var(--text-3); }
+.role-check       { font-size: 1rem; flex-shrink: 0; }
+
+.role-popover-footer {
+  display: flex; align-items: center; gap: 6px;
+  padding: 9px 14px;
+  border-top: 1px solid var(--border);
+  font-size: .74rem; color: var(--text-3);
+  background: var(--bg-hover);
+}
+
+.role-popover-footer i      { font-size: .85rem; }
+.role-popover-footer strong { color: var(--text-2); }
+
+/* ── Responsive ── */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .hamburger { display: flex; }
+  .topbar    { padding: 0 20px; }
+}
+
+/* Large mobile */
+@media (max-width: 768px) {
+  .topbar-date { display: none; }
+  .role-popover { width: 220px; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .topbar         { padding: 0 14px; height: 56px; }
+  .topbar-title   { font-size: .95rem; }
+  .topbar-avatar  { width: 32px; height: 32px; font-size: .75rem; }
+  /* Popover right-aligns off screen on tiny phones — clamp it */
+  .role-popover {
+    right: -14px;
+    width: calc(100vw - 28px);
+    max-width: 280px;
+  }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .topbar       { padding: 0 10px; }
+  .topbar-title { font-size: .88rem; }
+}

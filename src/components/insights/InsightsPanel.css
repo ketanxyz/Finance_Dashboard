@@ -1,0 +1,120 @@
+/* InsightsPanel.css */
+
+/* ── KPI Cards ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px; margin-bottom: 20px;
+}
+
+.kpi-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  transition: all var(--dur);
+  min-width: 0;
+}
+
+.kpi-card:hover { box-shadow: var(--shadow-sm); }
+
+.kpi-label {
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--text-3); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 5px;
+}
+
+.kpi-label i { font-size: .85rem; }
+
+.kpi-val {
+  font-size: 1.5rem; font-weight: 800;
+  letter-spacing: -.04em; color: var(--text-1);
+  line-height: 1; margin-bottom: 4px;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.kpi-val.green { color: var(--green); }
+.kpi-val.red   { color: var(--red);   }
+
+.kpi-desc { font-size: .74rem; color: var(--text-3); line-height: 1.4; }
+
+/* ── Monthly grids ── */
+.monthly-charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 20px;
+}
+
+.progress-list { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+
+.progress-row-top {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 5px;
+}
+
+.progress-row-top .name { font-size: .83rem; font-weight: 500; color: var(--text-2); }
+.progress-row-top .val  { font-size: .8rem; font-family: var(--font-mono); font-weight: 600; color: var(--text-1); }
+
+.track { height: 7px; background: var(--bg-hover); border-radius: 99px; overflow: hidden; }
+.fill  { height: 100%; border-radius: 99px; transition: width .8s var(--ease); }
+
+/* ── Top Categories ── */
+.top-cat-list { display: flex; flex-direction: column; gap: 11px; margin-top: 6px; }
+
+.top-cat-row { display: flex; align-items: center; gap: 10px; }
+
+.rank {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--bg-hover); color: var(--text-3);
+  font-size: .7rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.cat-name  { width: 100px; font-size: .83rem; color: var(--text-2); flex-shrink: 0; }
+.cat-track { flex: 1; height: 6px; background: var(--bg-hover); border-radius: 99px; overflow: hidden; }
+.cat-fill  { height: 100%; border-radius: 99px; }
+.cat-amount {
+  font-family: var(--font-mono); font-size: .78rem;
+  font-weight: 600; color: var(--text-1);
+  width: 72px; text-align: right; flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+
+/* Large desktop — KPIs stay 4 col */
+
+/* Large tablet — 2x2 KPIs */
+@media (max-width: 1100px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-val  { font-size: 1.3rem; }
+}
+
+/* Tablet — monthly grid stacks */
+@media (max-width: 960px) {
+  .monthly-charts-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* Large mobile */
+@media (max-width: 768px) {
+  .kpi-card { padding: 16px; }
+  .kpi-val  { font-size: 1.2rem; }
+  .cat-name { width: 80px; font-size: .78rem; }
+  .cat-amount { width: 62px; font-size: .74rem; }
+}
+
+/* Mobile — 1 col KPIs */
+@media (max-width: 540px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+  .kpi-val  { font-size: 1.1rem; }
+  .kpi-desc { font-size: .7rem; }
+}
+
+/* Tiny */
+@media (max-width: 360px) {
+  .kpi-grid { grid-template-columns: 1fr; }
+  .top-cat-row { gap: 7px; }
+  .cat-name { width: 70px; font-size: .74rem; }
+  .rank { width: 18px; height: 18px; font-size: .62rem; }
+}

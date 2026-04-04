@@ -1,0 +1,39 @@
+/* DashboardPage.css */
+
+.page {
+  padding: var(--space-lg);
+  flex: 1;
+  animation: fadeUp .3s var(--ease) both;
+  min-width: 0;
+}
+
+.page-header { margin-bottom: 22px; }
+.page-header h2 {
+  font-size: 1.45rem; font-weight: 800;
+  letter-spacing: -.03em; color: var(--text-1);
+}
+.page-header p { font-size: .86rem; color: var(--text-3); margin-top: 3px; }
+
+/* Tablet */
+@media (max-width: 960px) {
+  .page { padding: 22px; }
+}
+
+/* Large mobile */
+@media (max-width: 768px) {
+  .page { padding: 18px; }
+  .page-header h2 { font-size: 1.25rem; }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .page { padding: 14px; }
+  .page-header { margin-bottom: 16px; }
+  .page-header h2 { font-size: 1.1rem; }
+  .page-header p  { font-size: .8rem; }
+}
+
+/* Tiny phones */
+@media (max-width: 360px) {
+  .page { padding: 10px; }
+}
