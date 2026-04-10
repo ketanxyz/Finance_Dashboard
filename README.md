@@ -5,6 +5,8 @@ A modern finance dashboard built using React to understand how real-world financ
 The main focus of this project was to build a clean UI, handle state properly, and create interactive data visualizations without relying on heavy libraries.
 
 ---
+# Live: https://finance-dashboard-two-theta.vercel.app/dashboard
+---
 
 ## Tech Stack
 
